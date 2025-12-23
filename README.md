@@ -46,4 +46,11 @@ This project is a Flask-based web application designed to assist in the prelimin
 ```bash
 pip install flask opencv-python-headless numpy pillow
 
+## 🚀 Running the App | طريقة تشغيل التطبيق
 
+1. Clone the repository or download the files.
+2. Navigate to the project directory.
+3. Run the application:
+
+```bash
+python app.py
