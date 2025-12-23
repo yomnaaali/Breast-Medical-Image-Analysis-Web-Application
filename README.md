@@ -50,3 +50,11 @@ The underlying logic in `app.py` follows this pipeline:
 ```bash
 git clone [https://github.com/your-username/Breast-Medical-Image-Analysis-Web-Application.git](https://github.com/your-username/Breast-Medical-Image-Analysis-Web-Application.git)
 cd Breast-Medical-Image-Analysis-Web-Application
+
+###2. Create a Virtual Environment (Optional)
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
