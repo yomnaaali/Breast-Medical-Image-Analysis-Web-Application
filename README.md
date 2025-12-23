@@ -1,56 +1,49 @@
-# Breast-Medical-Image-Analysis-Web-Application 🎗️
+# Breast Cancer Detection & Segmentation Web App 🎗️
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Flask](https://img.shields.io/badge/Framework-Flask-green)
-![OpenCV](https://img.shields.io/badge/Library-OpenCV-red)
-
-A web-based medical imaging tool designed to process and analyze breast mammography scans. This application utilizes Computer Vision techniques (OpenCV) to detect high-density regions, segment potential abnormalities, and provide size estimations.
-
----
+> **Note:** This is a prototype application for educational and demonstration purposes. It utilizes Computer Vision techniques (OpenCV) to detect high-density regions in mammograms/MRI.
 
 ## 📋 Table of Contents
-- [Project Overview](#-project-overview)
-- [Key Features](#-key-features)
-- [How It Works](#-how-it-works)
-- [Technology Stack](#-technology-stack)
-- [Installation & Setup](#-installation--setup)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [Disclaimer](#-disclaimer)
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [How It Works](#how-it-works)
+- [Technologies Used](#technologies-used)
+- [Installation & Usage](#installation--usage)
+- [Project Structure](#project-structure)
+- [Disclaimer](#disclaimer)
 
 ---
 
-## 📖 Project Overview
-This project serves as a prototype for automated medical image analysis. It provides a simple interface for radiologists or users to upload X-ray images. The system automatically processes the image to highlight the largest area of high density (which can indicate a mass or calcification) and calculates its approximate radius.
+## 📖 About the Project | نبذة عن المشروع
+This project is a Flask-based web application designed to assist in the preliminary analysis of medical images (specifically breast mammography). The app allows users to upload an X-ray image, processes it to identify the largest high-density area (potential mass), and returns the image with the highlighted region along with an estimated size.
 
-## ✨ Key Features
-* **Web Interface:** Simple and clean UI for uploading `.jpg`, `.jpeg`, and `.png` medical images.
-* **Automated Segmentation:** Uses image thresholding to isolate bright regions in the mammogram.
-* **ROI Detection:** Automatically identifies the largest contour (Region of Interest).
-* **Visual Output:** Draws a red bounding circle around the detected area.
-* **Size Estimation:** Calculates and displays the radius of the mass in centimeters (based on pixel-to-cm conversion logic).
 
-## ⚙️ How It Works
-The underlying logic in `app.py` follows this pipeline:
-1.  **Input:** User uploads an image via the Flask web interface.
-2.  **Preprocessing:** The image is converted to grayscale using OpenCV.
-3.  **Thresholding:** A binary threshold (Pixel intensity > 200) separates high-density (white) areas from the background.
-4.  **Contour Extraction:** The algorithm finds all contours and selects the one with the maximum area.
-5.  **Output:** The result is rendered back to the user with the detected mass highlighted.
+## ✨ Features | المميزات
+* **Simple UI:** Easy-to-use interface for uploading medical images.
+* **Image Processing:** Automatic detection of high-density areas using OpenCV.
+* **Visualization:** Draws a bounding circle around the detected region.
+* **Size Estimation:** Calculates the radius of the detected area.
+* **Cross-Platform:** Runs on any machine with Python installed.
 
-## 💻 Technology Stack
-* **Backend:** Python 3, Flask
-* **Computer Vision:** OpenCV (`cv2`), NumPy
-* **Image Handling:** Pillow (PIL)
-* **Frontend:** HTML5, CSS3
+## 🛠️ How It Works | آلية العمل
+1.  **Upload:** User uploads an image via the web interface.
+2.  **Preprocessing:** The image is converted to grayscale.
+3.  **Thresholding:** A binary threshold is applied to isolate bright (dense) areas.
+4.  **Contour Detection:** The algorithm finds contours and selects the largest one.
+5.  **Output:** The original image is returned with the detected area circled in red.
 
-## 🚀 Installation & Setup
+## 💻 Technologies Used | التقنيات المستخدمة
+* **Python 3.x**
+* **Flask** (Web Framework)
+* **OpenCV (cv2)** (Image Processing)
+* **NumPy** (Numerical Operations)
+* **Pillow (PIL)** (Image Manipulation)
+* **HTML/CSS** (Frontend)
 
-### 1. Clone the Repository
+## 🚀 Installation & Usage | التثبيت والتشغيل
+
+### Prerequisites
+
 ```bash
-git clone [https://github.com/your-username/Breast-Medical-Image-Analysis-Web-Application.git](https://github.com/your-username/Breast-Medical-Image-Analysis-Web-Application.git)
-cd Breast-Medical-Image-Analysis-Web-Application
-
-### 3.Install Dependencies
 pip install flask opencv-python-headless numpy pillow
+
 
