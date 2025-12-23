@@ -58,3 +58,7 @@ venv\Scripts\activate
 # Mac/Linux:
 source venv/bin/activate
 
+##3. Install Dependencies
+pip install flask opencv-python-headless numpy pillow
+
+
